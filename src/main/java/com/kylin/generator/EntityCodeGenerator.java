@@ -92,11 +92,11 @@ public class EntityCodeGenerator {
     
 	public void execute() {
 		
-		final String codePath ="/Users/sunyihan/Documents/ideaWorkspace/opt";
+		final String codePath ="E:\\mywork\\code";
 		
-		final String dbUrl = "jdbc:mysql://rm-2ze1e8na28wb60205o.mysql.rds.aliyuncs.com:3306/dev_gdpaycenter?autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-		final String userName ="dev_gdpaycenter";
-		final String password ="KoeVigzX1TiL3D";
+		final String dbUrl = "jdbc:mysql://39.107.253.198:3306/ims?autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
+		final String userName ="root";
+		final String password ="321";
 //
 //		final String dbUrl = "jdbc:mysql://rm-2ze437718vui912zso.mysql.rds.aliyuncs.com:3306/test_paydb?autoReconnect=true&rewriteBatchedStatements=true&socketTimeout=30000&connectTimeout=3000&characterEncoding=utf8&allowMultiQueries=true";
 //		final String userName = "test_paydb";
@@ -107,13 +107,13 @@ public class EntityCodeGenerator {
 //		final String userName ="root";
 //		final String password ="123456a";
 		
-		final String packageName ="com.cgd.paycenter.dao";
+		final String packageName ="cn.onlov.core.dao";
 		final String entityTemplate ="/templates/kylin/entity.java.vm";
 		final String mapperTemplate ="/templates/kylin/mapper.java.vm";
 		final String serviceTemplate ="/templates/kylin/service.java.vm";
 		final String serviceImplTemplate ="/templates/kylin/serviceImpl.java.vm";
 		
-		String[] tableNames = new String[] {"d_timer_log"};
+		String[] tableNames = new String[] {"bookroom"};
 		
 		DataSourceConfig ds  = this.createDsConfig(dbUrl, userName, password);
 		GlobalConfig globalConfig = this.createGlobalConfig(codePath);
