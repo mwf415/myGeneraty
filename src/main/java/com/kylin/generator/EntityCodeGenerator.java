@@ -1,22 +1,17 @@
 package com.kylin.generator;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.config.ConstVal;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.TemplateConfig;
+import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EntityCodeGenerator {
 
@@ -93,27 +88,46 @@ public class EntityCodeGenerator {
 	public void execute() {
 		
 		final String codePath ="E:\\mywork\\code";
-		
-		final String dbUrl = "jdbc:mysql://39.107.253.198:3306/ims?autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
-		final String userName ="root";
-		final String password ="321";
-//
+
+		/**
+		 * ims 新系统生成代码
+		 */
+//		final String dbUrl = "jdbc:mysql://39.107.253.198:3306/ims?autoReconnect=true&failOverReadOnly=false&maxReconnects=10";
+//		final String userName ="root";
+//		final String password ="321";
+
+		/**
+		 * 支付中心
+		 */
 //		final String dbUrl = "jdbc:mysql://rm-2ze437718vui912zso.mysql.rds.aliyuncs.com:3306/test_paydb?autoReconnect=true&rewriteBatchedStatements=true&socketTimeout=30000&connectTimeout=3000&characterEncoding=utf8&allowMultiQueries=true";
 //		final String userName = "test_paydb";
 //		final String password ="BJtydic_123";
 
 
-//		final String dbUrl = "jdbc:mysql://localhost:3306/bit_test?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
-//		final String userName ="root";
-//		final String password ="123456a";
+		/**
+		 * 投标中心
+		 */
+		final String dbUrl = "jdbc:mysql://rm-2ze160m87u5orqmq7o.mysql.rds.aliyuncs.com/forging_bid?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
+		final String userName ="dev_forging_bid";
+		final String password ="w4MBvlKnY";
 		
-		final String packageName ="cn.onlov.core.dao";
+//		final String packageName ="cn.onlov.cycle.core.dao";
+		final String packageName ="com.neep.common.dao";
 		final String entityTemplate ="/templates/kylin/entity.java.vm";
 		final String mapperTemplate ="/templates/kylin/mapper.java.vm";
 		final String serviceTemplate ="/templates/kylin/service.java.vm";
 		final String serviceImplTemplate ="/templates/kylin/serviceImpl.java.vm";
 		
-		String[] tableNames = new String[] {"bookroom"};
+		String[] tableNames = new String[] {
+				"bid_iqr_quotation",
+				"bid_supplier_info",
+//				"d_iqr_attachment",
+				"bid_attachment",
+				"text_document_info",
+				"text_sentence_comp_result",
+				"text_doc_comp_result",
+				"text_doc_comp_info_result"
+		};
 		
 		DataSourceConfig ds  = this.createDsConfig(dbUrl, userName, password);
 		GlobalConfig globalConfig = this.createGlobalConfig(codePath);
