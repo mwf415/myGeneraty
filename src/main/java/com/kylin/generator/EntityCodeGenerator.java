@@ -96,20 +96,9 @@ public class EntityCodeGenerator {
 //		final String userName ="root";
 //		final String password ="321";
 
-		/**
-		 * 支付中心
-		 */
-//		final String dbUrl = "jdbc:mysql://rm-2ze437718vui912zso.mysql.rds.aliyuncs.com:3306/test_paydb?autoReconnect=true&rewriteBatchedStatements=true&socketTimeout=30000&connectTimeout=3000&characterEncoding=utf8&allowMultiQueries=true";
-//		final String userName = "test_paydb";
-//		final String password ="BJtydic_123";
 
 
-		/**
-		 * 投标中心
-		 */
-		final String dbUrl = "jdbc:mysql://rm-2ze160m87u5orqmq7o.mysql.rds.aliyuncs.com/forging_bid?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
-		final String userName ="dev_forging_bid";
-		final String password ="w4MBvlKnY";
+
 		
 //		final String packageName ="cn.onlov.cycle.core.dao";
 		final String packageName ="com.neep.common.dao";
